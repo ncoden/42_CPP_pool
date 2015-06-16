@@ -7,7 +7,8 @@ C++ Pool of the [42 school](http://42.fr).
 All subjects and associated resources are given with exercises.
 
 The exercises given each day require the following notions :
-* j00 : 
+* j00 : C++ basics (class, member functions, stream...)
+* j01 : Memory allocation, references, pointers to members, file streams.
 
 **Message to 42 students :** You are free to copy, modify and share under your name my exercises. But you will learn nothing, or will have the impression to understand without be able to do it again alone. Be responsible and simply ask for help.
 
