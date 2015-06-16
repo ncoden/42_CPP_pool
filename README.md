@@ -1,5 +1,6 @@
-42 school - C++ pool
+42_CPP_pool
 =====
+42 school - C++ pool
 
 #### About
 C++ Pool of the [42 school](http://42.fr).
