@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/06/16 21:30:06 by ncoden            #+#    #+#             */
-/*   Updated: 2015/06/16 22:58:29 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/06/16 23:24:58 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,11 @@
 #include <iostream>
 #include "Human.hpp"
 
-using namespace std;
-
-int												Human::_attack_number = 3;
-pair<string, void (Human::*)(string const &)>	Human::_attacks[] = {
-	pair<string, void (Human::*)(string const &)>("meleeAttack", &Human::meleeAttack),
-	pair<string, void (Human::*)(string const &)>("rangedAttack", &Human::rangedAttack),
-	pair<string, void (Human::*)(string const &)>("intimidatingShout", &Human::intimidatingShout)
+int																Human::_attack_number = 3;
+std::pair<std::string, void (Human::*)(std::string const &)>	Human::_attacks[] = {
+	std::pair<std::string, void (Human::*)(std::string const &)>("meleeAttack", &Human::meleeAttack),
+	std::pair<std::string, void (Human::*)(std::string const &)>("rangedAttack", &Human::rangedAttack),
+	std::pair<std::string, void (Human::*)(std::string const &)>("intimidatingShout", &Human::intimidatingShout)
 };
 
 Human::Human(char const *name):
@@ -28,22 +26,22 @@ Human::Human(char const *name):
 
 Human::~Human(void) {}
 
-void			Human::meleeAttack(string const &target)
+void			Human::meleeAttack(std::string const &target)
 {
-	cout << name << " attack " << target << " with a melee attack" << endl;
+	std::cout << name << " attack " << target << " with a melee attack" << std::endl;
 }
 
-void			Human::rangedAttack(string const &target)
+void			Human::rangedAttack(std::string const &target)
 {
-	cout << name << " attack " << target << " with a ranged attack" << endl;
+	std::cout << name << " attack " << target << " with a ranged attack" << std::endl;
 }
 
-void			Human::intimidatingShout(string const &target)
+void			Human::intimidatingShout(std::string const &target)
 {
-	cout << name << " attack " << target << " with a intimidating shout" << endl;
+	std::cout << name << " attack " << target << " with a intimidating shout" << std::endl;
 }
 
-void			Human::action(string const &action_name, string const &target)
+void			Human::action(std::string const &action_name, std::string const &target)
 {
 	int			i;
 
