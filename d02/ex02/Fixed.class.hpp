@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.class.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mdarriga <mdarriga@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/06/17 14:04:31 by mdarriga          #+#    #+#             */
-/*   Updated: 2015/06/17 18:58:31 by mdarriga         ###   ########.fr       */
+/*   Updated: 2015/06/22 07:36:39 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@
 class Fixed
 {
 	public:
+		static Fixed		&min(Fixed &n1, Fixed &n2);
+		static Fixed		&max(Fixed &n1, Fixed &n2);
 		static Fixed const	&min(Fixed const &n1, Fixed const &n2);
 		static Fixed const	&max(Fixed const &n1, Fixed const &n2);
 

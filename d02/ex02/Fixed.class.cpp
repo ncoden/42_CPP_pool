@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.class.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mdarriga <mdarriga@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/06/17 14:04:24 by mdarriga          #+#    #+#             */
-/*   Updated: 2015/06/17 19:04:53 by mdarriga         ###   ########.fr       */
+/*   Updated: 2015/06/22 07:35:45 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -148,6 +148,16 @@ Fixed			&Fixed::operator--(int)
 	Fixed		*cpy = new Fixed(*this);
 	operator--();
 	return (*cpy);
+}
+
+Fixed 			&Fixed::min(Fixed &n1, Fixed &n2)
+{
+	return ((n1._rawBits < n2._rawBits) ? n1 : n2);
+}
+
+Fixed 			&Fixed::max(Fixed &n1, Fixed &n2)
+{
+	return ((n1._rawBits > n2._rawBits) ? n1 : n2);
 }
 
 Fixed const		&Fixed::min(Fixed const &n1, Fixed const &n2)
