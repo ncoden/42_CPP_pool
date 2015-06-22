@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/06/16 23:16:09 by ncoden            #+#    #+#             */
-/*   Updated: 2015/06/17 00:27:59 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/06/22 07:29:04 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,13 @@
 
 #include <string>
 
+struct t_output;
+
 class Logger
 {
 	private:
-		static std::pair<std::string, void (Logger::*)(std::string const &)>	_outs[];
-		static int																_out_number;
+		static t_output	_outs[];
+		static int		_out_number;
 
 		std::string																_out_file;
 

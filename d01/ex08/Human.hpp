@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/06/16 21:28:21 by ncoden            #+#    #+#             */
-/*   Updated: 2015/06/16 23:21:56 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/06/22 07:29:16 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,13 @@
 
 #include <string>
 
+struct t_attack;
+
 class Human
 {
 	private:
-		static std::pair<std::string, void (Human::*)(std::string const &)>	_attacks[];
-		static int															_attack_number;
+		static t_attack		_attacks[];
+		static int			_attack_number;
 
 		void		meleeAttack(std::string const &target);
 		void		rangedAttack(std::string const &target);

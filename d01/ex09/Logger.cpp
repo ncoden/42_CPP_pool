@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/06/16 23:33:02 by ncoden            #+#    #+#             */
-/*   Updated: 2015/06/17 00:29:40 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/06/22 07:28:17 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,16 @@
 #include <fstream>
 #include "Logger.hpp"
 
-int																Logger::_out_number = 2;
-std::pair<std::string, void (Logger::*)(std::string const &)>	Logger::_outs[] = {
-	std::pair<std::string, void (Logger::*)(std::string const &)>("console", &Logger::logToConsole),
-	std::pair<std::string, void (Logger::*)(std::string const &)>("file", &Logger::logToFile)
+struct t_output
+{
+	std::string		name;
+	void			(Logger::*func)(std::string const &);
+};
+
+int				Logger::_out_number = 2;
+t_output		Logger::_outs[] = {
+	{"console", &Logger::logToConsole},
+	{"file", &Logger::logToFile}
 };
 
 Logger::Logger(std::string const &out_file):
@@ -67,9 +73,9 @@ void			Logger::log(std::string const &dest, std::string const &message)
 	i = 0;
 	while (i < _out_number)
 	{
-		if (dest == _outs[i].first)
+		if (dest == _outs[i].name)
 		{
-			(this->*_outs[i].second)(message);
+			(this->*_outs[i].func)(message);
 			break;
 		}
 		i++;

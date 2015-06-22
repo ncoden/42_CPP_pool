@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/06/16 21:30:06 by ncoden            #+#    #+#             */
-/*   Updated: 2015/06/17 00:06:08 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/06/22 07:27:56 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,17 @@
 #include <iostream>
 #include "Human.hpp"
 
-int																Human::_attack_number = 3;
-std::pair<std::string, void (Human::*)(std::string const &)>	Human::_attacks[] = {
-	std::pair<std::string, void (Human::*)(std::string const &)>("meleeAttack", &Human::meleeAttack),
-	std::pair<std::string, void (Human::*)(std::string const &)>("rangedAttack", &Human::rangedAttack),
-	std::pair<std::string, void (Human::*)(std::string const &)>("intimidatingShout", &Human::intimidatingShout)
+struct t_attack
+{
+	std::string		name;
+	void			(Human::*func)(std::string const &);
+};
+
+int				Human::_attack_number = 3;
+t_attack		Human::_attacks[] = {
+	{"meleeAttack", &Human::meleeAttack},
+	{"rangedAttack", &Human::rangedAttack},
+	{"intimidatingShout", &Human::intimidatingShout}
 };
 
 Human::Human(char const *name):
@@ -48,9 +54,9 @@ void			Human::action(std::string const &action_name, std::string const &target)
 	i = 0;
 	while (i < _attack_number)
 	{
-		if (action_name == _attacks[i].first)
+		if (action_name == _attacks[i].name)
 		{
-			(this->*_attacks[i].second)(target);
+			(this->*_attacks[i].func)(target);
 			break;
 		}
 		i++;
