@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/06/18 11:38:14 by ncoden            #+#    #+#             */
-/*   Updated: 2015/06/18 20:11:44 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/06/22 13:33:47 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ ScavTrap::~ScavTrap(void)
 ScavTrap		&ScavTrap::operator=(ScavTrap const	&rhs)
 {
 	if (this != &rhs)
-		*this = rhs;
+		ClapTrap::operator=(rhs);
 	return *this;
 }
 

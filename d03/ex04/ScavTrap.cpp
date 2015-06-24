@@ -49,7 +49,7 @@ ScavTrap::~ScavTrap(void)
 ScavTrap		&ScavTrap::operator=(ScavTrap const	&rhs)
 {
 	if (this != &rhs)
-		*this = rhs;
+		ClapTrap::operator=(rhs);
 	return *this;
 }
 

@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/06/18 11:38:14 by ncoden            #+#    #+#             */
-/*   Updated: 2015/06/18 20:10:32 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/06/22 13:33:21 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,19 @@ ClapTrap::~ClapTrap(void)
 ClapTrap		&ClapTrap::operator=(ClapTrap const	&rhs)
 {
 	if (this != &rhs)
-		*this = rhs;
-	return *this;
+	{
+		this->_version = rhs._version;
+		this->_maxHitPoints = rhs._maxHitPoints;
+		this->_maxEnergyPoints = rhs._maxEnergyPoints;
+		this->_armorDamageReduction = rhs._armorDamageReduction;
+		this->_name = rhs._name;
+		this->_hitPoints = rhs._hitPoints;
+		this->_energyPoints = rhs._energyPoints;
+		this->_level = rhs._level;
+		this->_meleeAttackDamage = rhs._meleeAttackDamage;
+		this->_rangedAttackDamage = rhs._rangedAttackDamage;
+	}
+	return (*this);
 }
 
 void			ClapTrap::rangedAttack(std::string const &target)
