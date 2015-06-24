@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/06/18 11:38:14 by ncoden            #+#    #+#             */
-/*   Updated: 2015/06/18 21:13:29 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/06/22 13:34:05 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,6 @@ SuperTrap::~SuperTrap(void)
 SuperTrap		&SuperTrap::operator=(SuperTrap const	&rhs)
 {
 	if (this != &rhs)
-		*this = rhs;
+		ClapTrap::operator=(rhs);
 	return *this;
 }

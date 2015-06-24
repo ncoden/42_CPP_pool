@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/06/18 11:38:14 by ncoden            #+#    #+#             */
-/*   Updated: 2015/06/18 17:27:13 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/06/22 13:24:52 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,8 +59,13 @@ FragTrap::~FragTrap(void)
 FragTrap		&FragTrap::operator=(FragTrap const	&rhs)
 {
 	if (this != &rhs)
-		*this = rhs;
-	return *this;
+	{
+		this->_name = rhs._name;
+		this->_hitPoints = rhs._hitPoints;
+		this->_energyPoints = rhs._energyPoints;
+		this->_level = rhs._level;
+	}
+	return (*this);
 }
 
 void			FragTrap::rangedAttack(std::string const &target)
