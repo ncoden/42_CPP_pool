@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/06/22 16:42:09 by ncoden            #+#    #+#             */
-/*   Updated: 2015/06/24 14:19:57 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/06/24 21:42:32 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,4 +48,8 @@ Form				*Intern::makeForm(std::string const &name, std::string const &target)
 		throw (Form::InvalidFormException());
 	std::cout << "Intern creates " << *form;
 	return (form);
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 92a1e599d1d58ed08bd65b53dab7d8d5532300ae

@@ -6,7 +6,7 @@
 /*   By: ncoden <ncoden@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/06/22 16:42:09 by ncoden            #+#    #+#             */
-/*   Updated: 2015/06/24 02:44:51 by ncoden           ###   ########.fr       */
+/*   Updated: 2015/06/24 21:42:19 by ncoden           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,7 +95,13 @@ void						CentralBureaucracy::doBureaucracy(void)
 	i = 0;
 	while (i < _queue_size)
 	{
+<<<<<<< HEAD
 		_offices[rand() % _office_count].doBureaucracy(_queue[i], _works[rand() % _work_count]);
+=======
+		/* inline, because performances matters													*/
+		/* (       random office       )              (        random work        ) ( target )	*/
+		_offices[rand() % _office_count].doBureaucracy(_works[rand() % _work_count], _queue[i]);
+>>>>>>> 92a1e599d1d58ed08bd65b53dab7d8d5532300ae
 		i++;
 	}
 	_queue_size = 0;
